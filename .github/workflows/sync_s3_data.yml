@@ -30,7 +30,7 @@ jobs:
 
       - name: sync s3 data biweekly
         run: |
-          if [(${{steps.get_date.outputs.todays_date}} - ${{steps.set_static_date.outputs.static_date}}) % 14 -eq 0] then
+          if [((${{steps.get_date.outputs.todays_date}} - ${{steps.set_static_date.outputs.static_date}}) % 14) == 0] then
             curl --location 'https://api.fivetran.com/v1/connectors/sentiment_lien/sync' \
               --header 'Content-Type: application/json' \
               --header 'Authorization: Basic ajUySFJJVFc5VDFubGJudjp2Yk8wRkJTakNWQ2JPOVh2SEl4eUpYTFZTd1U5OTlhMg==' \
