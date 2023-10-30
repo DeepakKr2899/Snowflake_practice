@@ -4,7 +4,7 @@ name: SYNC DATA ON EVERY TWO WEEKS
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "prod" branch
+  # Triggers the workflow on every monday at 12:00 UST
   - cron: "0 0 * * 1"
 
   # Allows you to run this workflow manually from the Actions tab
