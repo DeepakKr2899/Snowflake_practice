@@ -28,7 +28,7 @@ jobs:
         id: set_static_date
         run: echo "static_date=30/10/2023" >> "$GITHUB_OUTPUT"
 
-      - name: Transform Logic for Job to Run on Alternate Saturday's
+      - name: get date difference
         id: days-diff
         run: echo "DAYS_DIFF=$(($((${{ steps.todays-date.outputs.TODAYS_DATE }} - ${{steps.set_static_date.outputs.static_date}}))%14))" >> "$GITHUB_OUTPUT"
 
