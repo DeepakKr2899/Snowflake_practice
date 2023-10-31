@@ -1,0 +1,101 @@
+steps:
+  STG_EMPLOYEE-59945d5a-bd1a-4899-9500-7eb1134c5f53:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      deployEnabled: true
+      description: ""
+      isMultisource: false
+      locationName: SOURCE_PUBLIC
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 0e8c882d-17ff-4340-a1af-a5212353ccb4
+              stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: EMP_ID
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 8fd03a32-ac83-4c07-96bb-590799add75c
+                    stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+                transform: ""
+          - columnReference:
+              columnCounter: cc790ffe-ce96-45c3-888d-9c82dc03362d
+              stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: AGE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6d9a23cc-55f5-45ba-999d-da2de5e0afea
+                    stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+                transform: ""
+          - columnReference:
+              columnCounter: 77a60c7b-c706-4450-96b4-d690cea9df0a
+              stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NAME
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 5260b280-13db-4f7b-9805-26bc75c9bdbf
+                    stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+                transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: e680174e-53c2-4bb1-a7c4-45ae99a56337
+              stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            keyColumnType: None
+            name: rnk
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: "0"
+                    stepCounter: "0"
+                transform: rank() over(partition by emp_id order by age desc)
+            systemColumnType: None
+            transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases:
+              EMPLOYEE: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: SOURCE_PUBLIC
+                nodeName: EMPLOYEE
+            join:
+              joinCondition: FROM {{ ref('SOURCE_PUBLIC', 'EMPLOYEE') }} "EMPLOYEE" qualify "rnk"=1
+            name: STG_EMPLOYEE
+            noLinkRefs: []
+      name: STG_EMPLOYEE
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53

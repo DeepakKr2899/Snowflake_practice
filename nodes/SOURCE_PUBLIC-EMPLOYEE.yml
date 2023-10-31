@@ -1,0 +1,64 @@
+steps:
+  EMPLOYEE-6b651e10-76bf-42d7-85c5-9bec3e9be760:
+    operation:
+      database: ""
+      dataset: ""
+      deployEnabled: true
+      description: ""
+      locationID: ""
+      locationName: SOURCE_PUBLIC
+      metadata:
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 8fd03a32-ac83-4c07-96bb-590799add75c
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: EMP_ID
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 5260b280-13db-4f7b-9805-26bc75c9bdbf
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: VARCHAR(255)
+            defaultValue: ""
+            description: ""
+            name: NAME
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 6d9a23cc-55f5-45ba-999d-da2de5e0afea
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: AGE
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+        join:
+          joinCondition: FROM {{ ref('SOURCE_PUBLIC', 'EMPLOYEE') }}
+      name: EMPLOYEE
+      schema: ""
+      sqlType: Source
+      table: EMPLOYEE
+      type: sourceInput
+    stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
