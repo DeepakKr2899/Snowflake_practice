@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Sync data daily
+
+# Controls when the workflow will run
+on:
+  schedule:
+  - cron: "0 10 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a set of commands using the runners shell
+      - name: Sync data from fivetran to snowflake every sunday 
+        run: |
+          curl --location 'https://api.fivetran.com/v1/connectors/chaste_cautiously/sync' \
+          --header 'Content-Type: application/json' \
+          --header 'Authorization: Basic ajUySFJJVFc5VDFubGJudjp2Yk8wRkJTakNWQ2JPOVh2SEl4eUpYTFZTd1U5OTlhMg==' \
+          --header 'Cookie: INGRESSCOOKIE=a1b1cbf119d154a6f4a3d95833f40a11|bac6da9b4d464a443a3af1340233b03f' \
+          --data '{
+          "force": false
+          }'
