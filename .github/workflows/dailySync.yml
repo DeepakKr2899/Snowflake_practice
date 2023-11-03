@@ -20,7 +20,7 @@ jobs:
     steps:
 
       # Runs a set of commands using the runners shell
-      - name: Sync data from fivetran to snowflake every sunday 
+      - name: Sync data from fivetran to snowflake everyday 
         run: |
           curl --location 'https://api.fivetran.com/v1/connectors/chaste_cautiously/sync' \
           --header 'Content-Type: application/json' \
