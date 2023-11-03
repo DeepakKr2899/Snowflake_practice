@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Refresh nodes daily
+
+# Controls when the workflow will run
+on:
+  schedule:
+  - cron: "0 11 * * *"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a set of commands using the runners shell
+      - name: refresh the nodes daily at 4:30 PM 
+        run: |
+          curl --request POST \
+          --url https://app.coalescesoftware.io/scheduler/startRun \
+          --header 'Authorization: Bearer AMf-vByMCXCiIhRQNNwF_hakW0mi_hyfnDyQoe6YX-97eCIK4zndRaXEOtIJVnhsK6o_a2-quPlxUC0k71GXLbYZQSNtoQcOagd_PjEF-_guer0VXzW3EBL7BG1d7O-bXfpSC2KHUciHJDyB6VMteHGLtJ9FEpN2VGfRIXu2MyHmFfaG9_rjr0SL4QclWQE4kM7I5lgQLkPDYQFMrPD36LMxnYOQig5NyQ' \
+          --header 'accept: application/json' \
+          --header 'content-type: application/json' \
+          --data '
+          {
+          "runDetails": {
+            "parallelism": 16,
+            "environmentID": "3"
+          },
+          "userCredentials": {
+            "snowflakeAuthType": "Basic",
+            "snowflakeUsername": "DEEPAK28",
+            "snowflakePassword": "DaDa2802#",
+            "snowflakeWarehouse": "COMPUTE_WH",
+            "snowflakeRole": "ACCOUNTADMIN"
+            }
+          }
+          '
