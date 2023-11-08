@@ -1,6 +1,13 @@
 defaultStorageMapping: SOURCE_PUBLIC
 installedPackages: {}
-jobs: {}
+jobs:
+  Job-1:
+    excludeSelector: ""
+    id: 1
+    includeSelector: "{*EMPLOYEE}"
+    name: New Job
+    steps: []
+    subgraphs: []
 locations:
   DESTINATION_PUBLIC:
     mappingDefinitions:
