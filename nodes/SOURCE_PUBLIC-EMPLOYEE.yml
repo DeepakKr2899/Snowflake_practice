@@ -5,7 +5,6 @@ steps:
       dataset: ""
       deployEnabled: true
       description: ""
-      locationID: ""
       locationName: SOURCE_PUBLIC
       metadata:
         columns:
