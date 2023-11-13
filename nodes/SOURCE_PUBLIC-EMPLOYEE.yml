@@ -53,6 +53,81 @@ steps:
             nullable: true
             primaryKey: false
             uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 093370f7-b2ad-40f8-b9c8-2e15c8441110
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: VARCHAR(256)
+            defaultValue: ""
+            description: ""
+            name: _FILE
+            nullable: true
+            primaryKey: true
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 99aa3778-3890-4dcf-af33-e63ef86118a5
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: TIMESTAMP_TZ(9)
+            defaultValue: ""
+            description: ""
+            name: _FIVETRAN_SYNCED
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 1f64d7f4-5964-41e8-89f4-b5c9f83ac9fe
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: TIMESTAMP_TZ(9)
+            defaultValue: ""
+            description: ""
+            name: _MODIFIED
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: acd8eb92-d2e2-4383-bac6-72c66131fa7f
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: _LINE
+            nullable: true
+            primaryKey: true
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 48d61cca-9959-41dc-bde9-4762c809f6b4
+              stepCounter: 6b651e10-76bf-42d7-85c5-9bec3e9be760
+            config: {}
+            dataType: VARCHAR(255)
+            defaultValue: ""
+            description: ""
+            name: PROJECT
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
         join:
           joinCondition: FROM {{ ref('SOURCE_PUBLIC', 'EMPLOYEE') }}
       name: EMPLOYEE

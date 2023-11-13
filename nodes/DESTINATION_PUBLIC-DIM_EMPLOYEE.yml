@@ -198,6 +198,86 @@ steps:
             sourceColumnReferences:
               - columnReferences: []
                 transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 2ffe5258-b151-4fd1-87ea-1c5202c2ec61
+              stepCounter: 3d3c62af-26a0-4681-8a26-1fa5f98cdd25
+            dataType: VARCHAR(256)
+            description: ""
+            name: _FILE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 53d88503-4596-4a99-b5b0-757abf8622d1
+                    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 4d9d6460-d0b4-419b-b8bf-87bee691cf3b
+              stepCounter: 3d3c62af-26a0-4681-8a26-1fa5f98cdd25
+            dataType: TIMESTAMP_TZ(9)
+            description: ""
+            name: _FIVETRAN_SYNCED
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: d490ce21-326d-4ba5-8ad4-9fe0e49fcfec
+                    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: e6d158c2-3d68-49b4-bbb8-cd94163460a4
+              stepCounter: 3d3c62af-26a0-4681-8a26-1fa5f98cdd25
+            dataType: TIMESTAMP_TZ(9)
+            description: ""
+            name: _MODIFIED
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: f04c021c-1bdb-4f63-a417-9608ea086a8c
+                    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 92e48269-2124-41bf-a4ea-ddaa2c0a7f85
+              stepCounter: 3d3c62af-26a0-4681-8a26-1fa5f98cdd25
+            dataType: NUMBER(38,0)
+            description: ""
+            name: _LINE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 1bea480b-4f33-4e2b-bf53-4753a90d074e
+                    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+                transform: ""
+          - acceptedValues:
+              strictMatch: false
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 01edca88-414c-4339-b3e5-86adfb25683b
+              stepCounter: 3d3c62af-26a0-4681-8a26-1fa5f98cdd25
+            dataType: VARCHAR(255)
+            description: ""
+            name: PROJECT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 0095a279-f556-479b-9716-d4a7120c7dd0
+                    stepCounter: 59945d5a-bd1a-4899-9500-7eb1134c5f53
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
