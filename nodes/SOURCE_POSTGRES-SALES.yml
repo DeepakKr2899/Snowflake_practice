@@ -1,0 +1,123 @@
+steps:
+  SALES-6923992b-24ad-44ba-a392-8436720ba0b3:
+    operation:
+      database: ""
+      dataset: ""
+      deployEnabled: true
+      description: ""
+      locationName: SOURCE_POSTGRES
+      metadata:
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 382d9642-9ff0-4262-b28f-b6cb2cf73594
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: SALE_ID
+            nullable: false
+            primaryKey: true
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: bd9d0163-db75-4d8c-b3f1-46109b4a196a
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: VARCHAR(200)
+            defaultValue: ""
+            description: ""
+            name: PRODUCT_NAME
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: e085ad17-6cc6-4295-b591-e31eb17a1678
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: NUMBER(38,0)
+            defaultValue: ""
+            description: ""
+            name: QUANTITY
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 603febb0-1f6d-410e-b4f5-94cb8588ce9b
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: NUMBER(10,2)
+            defaultValue: ""
+            description: ""
+            name: UNIT_PRICE
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 7fad9d3a-7ead-4cc9-9459-5025e14f29ec
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: DATE
+            defaultValue: ""
+            description: ""
+            name: SALE_DATE
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 47c2a744-37a8-4f71-9519-386ff1459049
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: BOOLEAN
+            defaultValue: ""
+            description: ""
+            name: _FIVETRAN_DELETED
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 0205d533-f6c2-4dbd-a767-4e34c5108527
+              stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
+            config: {}
+            dataType: TIMESTAMP_TZ(9)
+            defaultValue: ""
+            description: ""
+            name: _FIVETRAN_SYNCED
+            nullable: true
+            primaryKey: false
+            uniqueKey: false
+        join:
+          joinCondition: FROM {{ ref('SOURCE_POSTGRES', 'SALES') }}
+      name: SALES
+      schema: ""
+      sqlType: Source
+      table: SALES
+      type: sourceInput
+    stepCounter: 6923992b-24ad-44ba-a392-8436720ba0b3
