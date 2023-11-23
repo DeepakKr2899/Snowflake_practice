@@ -47,8 +47,8 @@ stepTypes:
       defaultStorageLocation: null
       error: null
       nodeMetadataSpec: |
-        capitalized: Copy of Persistent Stage
-        short: PSTG
+        capitalized: Custom PSTG
+        short: CUS_PSTG
         plural: Persistent Stages
         tagColor: '#29B2DB'
             
@@ -63,6 +63,9 @@ stepTypes:
             - view
           
           - type: businessKeyColumns
+            isRequired: false
+
+          - type: changeTrackingColumns
             isRequired: false
 
           - type: multisourceToggle
@@ -507,7 +510,7 @@ stepTypes:
             		{% endfor %}
             	{% endfor %}
             {% endif %}
-    name: Copy of Persistent Stage
+    name: Custom PSTG
     version: 1
   StepType-Dimension:
     id: Dimension
