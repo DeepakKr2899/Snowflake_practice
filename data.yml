@@ -8,6 +8,13 @@ jobs:
     name: New Job
     steps: []
     subgraphs: []
+  Job-2:
+    excludeSelector: ""
+    id: 2
+    includeSelector: "{*SALES}"
+    name: Sales_data job
+    steps: []
+    subgraphs: []
 locations:
   DESTINATION_POSTGRES:
     mappingDefinitions:
@@ -156,7 +163,7 @@ stepTypes:
                         "{{ col.name }}"
                         {%- if col.description | length > 0 %} COMMENT '{{ col.description | escape }}'{% endif %}
                         {%- if not loop.last -%},{% endif %}
-                    {% endfor %}
+                    {% endfor %} 
                 )
                 {%- if node.description | length > 0 %} COMMENT = '{{ node.description | escape }}'{% endif %}
                 AS
